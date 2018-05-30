@@ -1,0 +1,269 @@
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.log
+	Report Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.rpt
+	Mininet1 Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/Mininet1.session
+	ONOScell Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/ONOScell.session
+	Test Script :/home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.py
+	Test Params : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.params
+	Topology : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'CASE11': 
+	'topo': 'mn --topo tree
+	3
+	3'
+	
+	 'CASE10': 
+	'ONOS_Configuration': 
+	'org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator': 
+	'useFlowObjectives': 'true'
+	 'defaultFlowObjectiveCompiler': 'org.onosproject.net.intent.impl.compiler.LinkCollectionIntentObjectiveCompiler'
+	
+	
+	 'Apps': 'org.onosproject.openflow'
+	 'numNodes': '1'
+	
+	 'testcases': '0
+	1
+	10
+	12'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'CASE0': ''
+	 'CASE32': ''
+	 'CASE1': 
+	'SleepTimers': 
+	'mnCfg': '10'
+	 'onosCfg': '60'
+	 'mnStartup': '15'
+	 'onosStartup': '60'
+	
+	 'NodeList': 'OC1'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': '192.168.56.101'
+	 'user': 'mininet'
+	 'COMPONENTS': 
+	'home': '~/mininet'
+	 'prompt': None
+	
+	 'password': 'mininet'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': '192.168.56.102'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': 'onos'
+	 'diff_clihost': None
+	 'web_pass': 'rocks'
+	 'prompt': 'onos'
+	 'cluster_name': 'ONOS'
+	 'onos_home': '~/onos'
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'password': None
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+2018-05-12 15:13:53,665 - NETCONF_Test - INFO - Creating component Handle: ONOScell
+2018-05-12 15:13:53,684 - NETCONF_Test - INFO - ONOScell: Found ['192.168.56.102'] ONOS IPs
+2018-05-12 15:13:53,684 - NETCONF_Test - INFO - ONOScell: Trying to connect to 192.168.56.102
+2018-05-12 15:13:54,302 - NETCONF_Test - INFO - Password not required logged in
+2018-05-12 15:13:54,575 - NETCONF_Test - INFO - Creating component Handle: ONOScli1
+2018-05-12 15:13:54,592 - NETCONF_Test - INFO - ONOScli1: Trying to connect to 192.168.56.102
+2018-05-12 15:13:55,207 - NETCONF_Test - INFO - Password not required logged in
+2018-05-12 15:13:55,360 - NETCONF_Test - INFO - Creating component Handle: ONOSrest1
+2018-05-12 15:13:55,471 - NETCONF_Test - INFO - ONOSrest1: ip set to 192.168.56.102
+2018-05-12 15:13:55,472 - NETCONF_Test - INFO - Creating component Handle: ONOSbench1
+2018-05-12 15:13:55,481 - NETCONF_Test - INFO - ONOSbench1: Found ['192.168.56.102'] ONOS IPs
+2018-05-12 15:13:55,482 - NETCONF_Test - INFO - ONOSbench1: Trying to connect to 192.168.56.102
+2018-05-12 15:13:56,096 - NETCONF_Test - INFO - Password not required logged in
+2018-05-12 15:13:56,248 - NETCONF_Test - INFO - Creating component Handle: ONOSserver1
+2018-05-12 15:13:56,256 - NETCONF_Test - INFO - ONOSserver1: Found ['192.168.56.102'] ONOS IPs
+2018-05-12 15:13:56,257 - NETCONF_Test - INFO - ONOSserver1: Trying to connect to 192.168.56.102
+2018-05-12 15:13:56,882 - NETCONF_Test - INFO - Password not required logged in
+2018-05-12 15:13:57,034 - NETCONF_Test - INFO - Creating component Handle: Mininet1
+2018-05-12 15:13:57,046 - NETCONF_Test - INFO - Mininet1: Trying to connect to 192.168.56.101
+2018-05-12 15:13:57,235 - NETCONF_Test - INFO - ssh connection asked for password, gave password
+2018-05-12 15:13:57,910 - NETCONF_Test - INFO - Connection successful to the host mininet@192.168.56.101
+
+
+******************************
+ Result summary for Testcase0
+******************************
+
+
+[2018-05-12 15:13:57.919528] [NETCONF_Test] [CASE]  Pull onos branch and build onos on Teststation.
+2018-05-12 15:13:57,920 - NETCONF_Test - INFO - Skipped git checkout and pull as they are disabled in params file
+
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+
+[2018-05-12 15:13:57.923743] [NETCONF_Test] [CASE]  Constructing test variables and building ONOS package
+
+[2018-05-12 15:13:57.924707] [NETCONF_Test] [STEP]  1.1: Constructing test variables
+2018-05-12 15:13:57,927 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:13:57,927 - NETCONF_Test - INFO - Successfully construct test variables 
+2018-05-12 15:13:57,927 - NETCONF_Test - INFO - Assertion Passed
+2018-05-12 15:13:57,928 - NETCONF_Test - INFO - self.home = 
+2018-05-12 15:13:57,928 - NETCONF_Test - INFO - ~/onos
+
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+
+******************************
+ Result summary for Testcase10
+******************************
+
+
+[2018-05-12 15:13:58.243424] [NETCONF_Test] [CASE]  Start up 1-node onos cluster.
+
+[2018-05-12 15:13:58.244685] [NETCONF_Test] [STEP]  10.1: Start ONOS cluster with basic (drivers) app.
+
+[2018-05-12 15:13:58.245739] [NETCONF_Test] [CASE]  Starting up 1 node(s) ONOS cluster
+2018-05-12 15:13:58,246 - NETCONF_Test - INFO - NODE COUNT = 1
+
+[2018-05-12 15:13:58.844104] [NETCONF_Test] [STEP]  10.2: Apply cell to environment
+2018-05-12 15:13:58,949 - NETCONF_Test - INFO - ONOSbench1: Successfully set cell: 
+[01;31m[KONOS_CELL[m[K=temp
+[01;31m[KOCI[m[K=192.168.56.102
+OC1=192.168.56.102
+[01;31m[KOCN[m[K=192.168.56.101
+ONOS_APPS=drivers
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/
+2018-05-12 15:13:59,051 - NETCONF_Test - INFO - Verify cell returned: .py
+ONOS_NIC=192.168.3.*
+ONOS_SCENARIOS=/home/sdn/onos
+2018-05-12 15:13:59,051 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:13:59,052 - NETCONF_Test - INFO - Successfully applied cell to environment
+2018-05-12 15:13:59,052 - NETCONF_Test - INFO - Assertion Passed
+
+[2018-05-12 15:13:59.053174] [NETCONF_Test] [STEP]  10.3: Uninstalling ONOS package
+2018-05-12 15:13:59,155 - NETCONF_Test - INFO - ONOS 192.168.56.102 was uninstalled
+2018-05-12 15:13:59,156 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:13:59,156 - NETCONF_Test - INFO - Successfully uninstalled ONOS package
+2018-05-12 15:13:59,156 - NETCONF_Test - INFO - Assertion Passed
+
+[2018-05-12 15:13:59.156933] [NETCONF_Test] [STEP]  10.4: Creating ONOS package
+2018-05-12 15:13:59,747 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:13:59,747 - NETCONF_Test - INFO - Successfully created ONOS package
+2018-05-12 15:13:59,747 - NETCONF_Test - INFO - Assertion Passed
+
+[2018-05-12 15:13:59.747879] [NETCONF_Test] [STEP]  10.5: Set up ONOS secure SSH
+2018-05-12 15:13:59,850 - NETCONF_Test - INFO - Secure SSH performed on 192.168.56.102
+2018-05-12 15:13:59,850 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:13:59,851 - NETCONF_Test - INFO - Test step PASS
+2018-05-12 15:13:59,851 - NETCONF_Test - INFO - Assertion Passed
+
+[2018-05-12 15:13:59.851845] [NETCONF_Test] [STEP]  10.6: Checking ONOS service
+2018-05-12 15:14:00,379 - NETCONF_Test - INFO - ONOSbench1: 192.168.56.102 is up
+2018-05-12 15:14:00,380 - NETCONF_Test - INFO - ONOS1 is up and ready
+2018-05-12 15:14:00,380 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:14:00,381 - NETCONF_Test - INFO - ONOS service is ready on all nodes
+2018-05-12 15:14:00,381 - NETCONF_Test - INFO - Assertion Passed
+
+[2018-05-12 15:14:00.381639] [NETCONF_Test] [STEP]  10.7: Starting ONOS CLI sessions
+2018-05-12 15:14:00,694 - NETCONF_Test - INFO - 192.168.56.102 CLI Started successfully
+2018-05-12 15:14:00,695 - NETCONF_Test - INFO - Successful CLI startup
+2018-05-12 15:14:00,695 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:14:00,695 - NETCONF_Test - INFO - Successfully start ONOS cli
+2018-05-12 15:14:00,695 - NETCONF_Test - INFO - Assertion Passed
+2018-05-12 15:14:00,696 - NETCONF_Test - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2018-05-12 15:14:00,696 - NETCONF_Test - INFO - Successfully started basic ONOS cluster 
+2018-05-12 15:14:00,696 - NETCONF_Test - INFO - Assertion Passed
+
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+
+******************************
+ Result summary for Testcase12
+******************************
+
+
+[2018-05-12 15:14:00.700996] [NETCONF_Test] [CASE]  Test some onos commands through CLI. 
+2018-05-12 15:14:00,919 - NETCONF_Test - INFO - Command 'netconf-get-config netconf:192.168.56.101:830' sent to ONOScli1.
+
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 12 May 2018 15:13:53
+ Test End             : 12 May 2018 15:14:00
+ Execution Time       : 0:00:07.259152
+ Total tests planned  : 4
+ Total tests RUN      : 4
+ Total Pass           : 4
+ Total Fail           : 0
+ Total No Result      : 0
+ Success Percentage   : 100%
+ Execution Result     : 100%
+
+ Case Executed        : [0, 1, 10, 12]
+ Case Not Executed    : []

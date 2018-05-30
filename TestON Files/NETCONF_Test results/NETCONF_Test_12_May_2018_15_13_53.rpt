@@ -1,0 +1,157 @@
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.log
+	Report Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.rpt
+	Mininet1 Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/Mininet1.session
+	ONOScell Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/ONOScell.session
+	Test Script :/home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.py
+	Test Params : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.params
+	Topology : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'CASE11': 
+	'topo': 'mn --topo tree
+	3
+	3'
+	
+	 'CASE10': 
+	'ONOS_Configuration': 
+	'org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator': 
+	'useFlowObjectives': 'true'
+	 'defaultFlowObjectiveCompiler': 'org.onosproject.net.intent.impl.compiler.LinkCollectionIntentObjectiveCompiler'
+	
+	
+	 'Apps': 'org.onosproject.openflow'
+	 'numNodes': '1'
+	
+	 'testcases': '0
+	1
+	10
+	12'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'CASE0': ''
+	 'CASE32': ''
+	 'CASE1': 
+	'SleepTimers': 
+	'mnCfg': '10'
+	 'onosCfg': '60'
+	 'mnStartup': '15'
+	 'onosStartup': '60'
+	
+	 'NodeList': 'OC1'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': '192.168.56.101'
+	 'user': 'mininet'
+	 'COMPONENTS': 
+	'home': '~/mininet'
+	 'prompt': None
+	
+	 'password': 'mininet'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': '192.168.56.102'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': 'onos'
+	 'diff_clihost': None
+	 'web_pass': 'rocks'
+	 'prompt': 'onos'
+	 'cluster_name': 'ONOS'
+	 'onos_home': '~/onos'
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'password': None
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+******************************
+ CASE INIT 
+******************************
+
+******************************
+ Result summary for Testcase0
+******************************
+
+*****************************
+ Result: Pass 
+*****************************
+
+******************************
+ Result summary for Testcase1
+******************************
+
+*****************************
+ Result: Pass 
+*****************************
+
+******************************
+ Result summary for Testcase10
+******************************
+
+*****************************
+ Result: Pass 
+*****************************
+
+******************************
+ Result summary for Testcase12
+******************************
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 12 May 2018 15:13:53
+ Test End             : 12 May 2018 15:14:00
+ Execution Time       : 0:00:07.259152
+ Total tests planned  : 4
+ Total tests RUN      : 4
+ Total Pass           : 4
+ Total Fail           : 0
+ Total No Result      : 0
+ Success Percentage   : 100%
+ Execution Result     : 100%
+
+ Case Executed        : [0, 1, 10, 12]
+ Case Not Executed    : []

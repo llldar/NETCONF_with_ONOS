@@ -1,0 +1,16 @@
+{
+  "devices": {
+    "netconf:<ip>:<port>": {
+      "netconf": {
+        "ip": <ip>,
+        "port": <port>,
+        "username": <username>,
+        "password": <password>
+      },
+      "basic": {
+        "driver": <driver-name>
+      }
+    }
+  }
+ }
+

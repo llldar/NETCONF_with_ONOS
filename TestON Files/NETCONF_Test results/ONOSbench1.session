@@ -1,0 +1,260 @@
+2018-05-12 15:13:55,482  ONOSbench1: INFO    : 
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.log
+	Report Log File : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/NETCONF_Test_12_May_2018_15_13_53.rpt
+	Mininet1 Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/Mininet1.session
+	ONOScell Session Log : /home/sdn/OnosSystemTest/TestON/logs/NETCONF_Test_12_May_2018_15_13_53/ONOScell.session
+	Test Script :/home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.py
+	Test Params : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.params
+	Topology : /home/sdn/OnosSystemTest/TestON/Tests/NETCONF_Test.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'CASE11': 
+	'topo': 'mn --topo tree
+	3
+	3'
+	
+	 'CASE10': 
+	'ONOS_Configuration': 
+	'org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator': 
+	'useFlowObjectives': 'true'
+	 'defaultFlowObjectiveCompiler': 'org.onosproject.net.intent.impl.compiler.LinkCollectionIntentObjectiveCompiler'
+	
+	
+	 'Apps': 'org.onosproject.openflow'
+	 'numNodes': '1'
+	
+	 'testcases': '0
+	1
+	10
+	12'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'CASE0': ''
+	 'CASE32': ''
+	 'CASE1': 
+	'SleepTimers': 
+	'mnCfg': '10'
+	 'onosCfg': '60'
+	 'mnStartup': '15'
+	 'onosStartup': '60'
+	
+	 'NodeList': 'OC1'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': '192.168.56.101'
+	 'user': 'mininet'
+	 'COMPONENTS': 
+	'home': '~/mininet'
+	 'prompt': None
+	
+	 'password': 'mininet'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': '192.168.56.102'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': 'onos'
+	 'diff_clihost': None
+	 'web_pass': 'rocks'
+	 'prompt': 'onos'
+	 'cluster_name': 'ONOS'
+	 'onos_home': '~/onos'
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'password': None
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+Last login: Sat May 12 15:13:54 2018 from hy436.home
+
+cd
+cd ~/onos
+2018-05-12 15:13:57,917  ONOSbench1: INFO    : 
+****************************************
+Start of Test Case0 : 
+2018-05-12 15:13:57,920  ONOSbench1: INFO    :  Pull onos branch and build onos on Teststation.
+****************************************
+
+2018-05-12 15:13:57,922  ONOSbench1: INFO    : 
+****************************************
+Start of Test Case1 : 
+2018-05-12 15:13:57,924  ONOSbench1: INFO    :  Constructing test variables and building ONOS package
+****************************************
+
+2018-05-12 15:13:57,925  ONOSbench1: INFO    : 
+---------------------------------------------
+Start of Step 1.1: Constructing test variables
+---------------------------------------------
+
+cd ~/onos
+git name-rev --name-only HEAD
+
+cd
+cd ~/onos
+]0;sdn@hy436:~[sdn@hy436 ~]$ 
+]0;sdn@hy436:~[sdn@hy436 ~]$ cd
+]0;sdn@hy436:~[sdn@hy436 ~]$ cd ~/onos
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ cd ~/onos
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ git name-rev --name-only HEAD
+master
+
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ cd ~/onos; git log -1 --pretty=fuller --decorate=short | grep -A 6  "commit" --color=never
+
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ cd ~/onos
+2018-05-12 15:13:58,242  ONOSbench1: INFO    : 
+****************************************
+Start of Test Case10 : 
+2018-05-12 15:13:58,244  ONOSbench1: INFO    :  Start up 1-node onos cluster.
+****************************************
+
+2018-05-12 15:13:58,245  ONOSbench1: INFO    : 
+---------------------------------------------
+Start of Step 10.1: Start ONOS cluster with basic (drivers) app.
+---------------------------------------------
+
+2018-05-12 15:13:58,246  ONOSbench1: INFO    :  Starting up 1 node(s) ONOS cluster
+****************************************
+
+2018-05-12 15:13:58,845  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.1: Start ONOS cluster with basic (drivers) app.
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.2: Apply cell to environment
+---------------------------------------------
+
+cell temp
+cd ~/onos
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ cell temp
+[01;31m[KONOS_CELL[m[K=temp
+[01;31m[KOCI[m[K=192.168.56.102
+OC1=192.168.56.102
+[01;31m[KOCN[m[K=192.168.56.101
+ONOS_APPS=drivers
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.3.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_TOPO=default
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+onos-verify-cell
+2018-05-12 15:13:59,053  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.2: Apply cell to environment
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.3: Uninstalling ONOS package
+---------------------------------------------
+
+
+onos-uninstall 192.168.56.102
+
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ 
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ onos-verify-cell
+192.168.56.101: 
+2018-05-12 15:13:59,157  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.3: Uninstalling ONOS package
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.4: Creating ONOS package
+---------------------------------------------
+
+buck build onos
+onos-uninstall 192.168.56.102
+buck build onos
+
+2018-05-12 15:13:59,748  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.4: Creating ONOS package
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.5: Set up ONOS secure SSH
+---------------------------------------------
+
+
+ onos-secure-ssh -u onos -p rocks 192.168.56.102
+2018-05-12 15:13:59,852  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.5: Set up ONOS secure SSH
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.6: Checking ONOS service
+---------------------------------------------
+
+onos-wait-for-start 192.168.56.102
+
+ onos-secure-ssh -u onos -p rocks 192.168.56.102
+hy436
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ 
+]0;sdn@hy436:~/onos[sdn@hy436 onos]$ onos-uninstall 192.168.56.102
+onos-wait-for-start 192.168.56.102
+buck build onos
+
+ onos-secure-ssh -u onos -p rocks 192.168.56.102
+onos-wait-for-start 192.168.56.102
+2018-05-12 15:14:00,382  ONOSbench1: INFO    : 
+---------------------------------------------
+End of Step  10.6: Checking ONOS service
+---------------------------------------------
+
+---------------------------------------------
+Start of Step 10.7: Starting ONOS CLI sessions
+---------------------------------------------
+
+2018-05-12 15:14:00,700  ONOSbench1: INFO    : 
+****************************************
+Start of Test Case12 : 
+2018-05-12 15:14:00,701  ONOSbench1: INFO    :  Test some onos commands through CLI. 
+****************************************
+
+exit
+
+exit
+ONOS failed to stop.
+Connection to 192.168.56.102 closed.
+

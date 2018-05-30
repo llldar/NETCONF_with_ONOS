@@ -1,0 +1,38 @@
+NETCONF_Test at 12 May 2018 15:13:53<p></p>
+<h3>Case 0: Pull onos branch and build onos on Teststation. - PASS</h3>
+<p></p>
+<ul>
+</ul>
+<ac:structured-macro ac:name="html">
+<ac:plain-text-body><![CDATA[
+<img src="https://jenkins.onosproject.org/view/QA/job/postjob-VM/lastSuccessfulBuild/artifact/SAMPstartTemplate_1node_master_20-builds_graph.jpg", alt="NETCONF_Test", style="width:525px;height:350px;border:0">]]></ac:plain-text-body>
+</ac:structured-macro>
+
+<h3>Case 1: Constructing test variables and building ONOS package - PASS</h3>
+<p>For loading from params file, and pull and build the latest ONOS package</p>
+<ul>
+<li>	1.1 Constructing test variables - PASS  <ac:emoticon ac:name="tick" /></li>
+
+</ul>
+<h3>Case 10: Starting up 1 node(s) ONOS cluster - PASS</h3>
+<p>Set up ONOS with 1 node(s) ONOS cluster</p>
+<ul>
+<li>	10.1 Start ONOS cluster with basic (drivers) app. - No Result  <ac:emoticon ac:name="warning" /></li>
+
+<li>	10.2 Apply cell to environment - PASS  <ac:emoticon ac:name="tick" /></li>
+
+<li>	10.3 Uninstalling ONOS package - PASS  <ac:emoticon ac:name="tick" /></li>
+
+<li>	10.4 Creating ONOS package - PASS  <ac:emoticon ac:name="tick" /></li>
+
+<li>	10.5 Set up ONOS secure SSH - PASS  <ac:emoticon ac:name="tick" /></li>
+
+<li>	10.6 Checking ONOS service - PASS  <ac:emoticon ac:name="tick" /></li>
+
+<li>	10.7 Starting ONOS CLI sessions - PASS  <ac:emoticon ac:name="tick" /></li>
+
+</ul>
+<h3>Case 12: Test some onos commands through CLI.  - PASS</h3>
+<p></p>
+<ul>
+</ul>

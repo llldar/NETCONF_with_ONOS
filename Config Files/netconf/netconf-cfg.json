@@ -1,0 +1,18 @@
+{
+  "devices": {
+  
+    "netconf:192.168.56.101:830": {
+      "netconf": {
+        "ip": "192.168.56.101",
+        "port": 830,
+        "username": "onos",
+        "password": "onos"
+      },
+
+      "basic": {
+        "driver": "ovs-netconf"
+      }
+    }
+  }
+}
+

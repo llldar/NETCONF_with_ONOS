@@ -1,0 +1,160 @@
+Logged NETCONF messages:
+
+First SDN controller sends hello message:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <capabilities>
+    <capability>urn:ietf:params:netconf:base:1.0</capability>
+   <capability>urn:ietf:params:netconf:base:1.1</capability>
+  </capabilities>
+</hello>
+
+
+Device replies:
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <capabilities>
+    <capability>urn:ietf:params:netconf:base:1.0</capability>
+    <capability>urn:ietf:params:netconf:base:1.1</capability>
+    <capability>urn:ietf:params:netconf:capability:writable-running:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:candidate:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:startup:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:rollback-on-error:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:interleave:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:notification:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:validate:1.0</capability>
+    <capability>urn:ietf:params:netconf:capability:validate:1.1</capability>
+    <capability>urn:ietf:params:netconf:capability:with-defaults:1.0?basic-mode=explicit&amp;also-supported=report-all,report-all-tagged,trim,explicit</capability>
+    <capability>urn:ietf:params:netconf:capability:url:1.0?scheme=scp,file</capability>
+    <capability>urn:onf:config:yang?module=of-config&amp;revision=2015-02-11</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-server?module=ietf-netconf-server&amp;revision=2014-01-24&amp;features=ssh,inbound-ssh</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-x509-cert-to-name?module=ietf-x509-cert-to-name&amp;revision=2013-03-26</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-with-defaults?module=ietf-netconf-with-defaults&amp;revision=2010-06-09</capability>
+    <capability>urn:cesnet:params:xml:ns:libnetconf:notifications?module=libnetconf-notifications&amp;revision=2016-07-21</capability>
+    <capability>urn:ietf:params:xml:ns:netconf:notification:1.0?module=notifications&amp;revision=2008-07-14</capability>
+    <capability>urn:ietf:params:xml:ns:netmod:notification?module=nc-notifications&amp;revision=2008-07-14</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-notifications?module=ietf-netconf-notifications&amp;revision=2012-02-06</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-netconf-monitoring?module=ietf-netconf-monitoring&amp;revision=2010-10-04</capability>
+    <capability>urn:ietf:params:xml:ns:netconf:base:1.0?module=ietf-netconf&amp;revision=2011-06-01&amp;features=writable-running,candidate,rollback-on-error,validate,startup,url</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-yang-types?module=ietf-yang-types&amp;revision=2013-07-15</capability>
+    <capability>urn:ietf:params:xml:ns:yang:ietf-inet-types?module=ietf-inet-types&amp;revision=2013-07-15</capability>
+  </capabilities>
+  <session-id>2</session-id>
+ </hello>
+ from request <?xml version="1.0" encoding="UTF-8"?>
+ <hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <capabilities>
+    <capability>urn:ietf:params:netconf:base:1.0</capability>
+    <capability>urn:ietf:params:netconf:base:1.1</capability>
+  </capabilities>
+ </hello>
+
+After the exchange of hello message, the device is connected to onos controller. As you can see they now have a session id and the onos controller, which serves as a netconf client, knows the capabilities of the netconf device.
+
+Now we try to get configuration of the device:
+Type this in ONOS CLI:
+
+netconf-get-config netconf:192.168.56.101:830 running
+
+It’s in a format of cli-command device-ID cfgtype
+
+Configuration have three types: running, candidate and startup
+
+We can see the ONOS send message to get the running configuration:
+
+<?xml version="1.0" encoding="UTF-8"?><rpc message-id="1"  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <get-config>
+ <source>
+ <running/></source></get-config>
+ </rpc>
+the device returns:
+ <?xml version="1.0" encoding="UTF-8"?>
+ <rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <data>
+    <capable-switch xmlns="urn:onf:config:yang">
+      <id>openvswitch</id>
+      <resources>
+        <port>
+          <name>ofc-bridge</name>
+          <requested-number>666</requested-number>
+          <configuration>
+            <admin-state>down</admin-state>
+            <no-receive>false</no-receive>
+            <no-forward>false</no-forward>
+            <no-packet-in>false</no-packet-in>
+          </configuration>
+        </port>
+      </resources>
+      <logical-switches>
+        <switch>
+          <id>ofc-bridge</id>
+          <datapath-id>00:01:02:03:04:05:06:07</datapath-id>
+          <lost-connection-behavior>failSecureMode</lost-connection-behavior>
+          <resources>
+            <port>ofc-bridge</port>
+          </resources>
+        </switch>
+      </logical-switches>
+    </capable-switch>
+  </data>
+ </rpc-reply>
+
+Change the cfgtype here we use:
+
+netconf-get-config netconf:192.168.56.101:830 candidate
+
+Now ONOS controller send this message to get the candidate configuration:
+
+<?xml version="1.0" encoding="UTF-8"?><rpc message-id="2"  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <get-config>
+ <source>
+ <candidate/></source></get-config>
+ </rpc>
+and get a reply:
+ <?xml version="1.0" encoding="UTF-8"?>
+ <rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+  <data/>
+</rpc-reply>
+
+Finally we try to get the startup config by
+
+netconf-get-config netconf:192.168.56.101:830 startup
+
+The SDN controller sends:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <get-config>
+    <source>
+      <startup/>
+    </source>
+  </get-config>
+</rpc>
+
+The device replies:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <data>
+    <capable-switch xmlns="urn:onf:config:yang">
+      <id>openvswitch</id>
+      <resources>
+        <port>
+          <name>ofc-bridge</name>
+          <requested-number>666</requested-number>
+        </port>
+      </resources>
+      <logical-switches>
+        <switch>
+          <id>ofc-bridge</id>
+          <datapath-id>00:01:02:03:04:05:06:07</datapath-id>
+          <resources>
+            <port>ofc-bridge</port>
+          </resources>
+        </switch>
+      </logical-switches>
+    </capable-switch>
+  </data>
+</rpc-reply>
